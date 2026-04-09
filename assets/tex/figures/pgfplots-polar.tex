@@ -1,0 +1,15 @@
+\begin{figure}
+    \centering
+    \begin{tikzpicture}
+        \begin{polaraxis}[
+            width=6cm, grid=both, xtick={0,45,...,315}, 
+            legend style={at={(1.15,1)}, anchor=north west},
+        ]
+            \addplot[fhtw-blue, thick, samples=360, domain=0:360] {abs(cos(2*x))};
+            \addlegendentry{$|\cos(2\theta)|$}
+            \addplot[fhtw-green, thick, dashed, samples=360, domain=0:360] {1 + sin(x)};
+            \addlegendentry{$1+\sin(\theta)$}
+        \end{polaraxis}
+    \end{tikzpicture}
+    \caption{Polar plot with radiation-like and cardioid patterns}
+\end{figure}

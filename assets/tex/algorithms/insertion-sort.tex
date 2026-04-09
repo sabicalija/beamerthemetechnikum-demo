@@ -1,0 +1,17 @@
+\begin{algorithmdisplay}
+    \begin{algorithm}[H]
+        \KwIn{Array $A$ of $n$ elements}
+        \KwOut{Sorted array $A$}
+        \For{$i \gets 1$ \KwTo $n - 1$}{
+            $\mathit{key} \gets A[i]$\;
+            $j \gets i - 1$\;
+            \While{$j \geq 0$ \KwAnd $A[j] > \mathit{key}$}{
+                $A[j+1] \gets A[j]$\;
+                $j \gets j - 1$\;
+            }
+            $A[j+1] \gets \mathit{key}$\;
+        }
+        \Return{$A$}\;
+    \end{algorithm}
+\end{algorithmdisplay}
+\algocaption{Insertion Sort}

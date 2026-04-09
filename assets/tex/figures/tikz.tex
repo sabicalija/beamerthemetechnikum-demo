@@ -1,0 +1,26 @@
+\begin{figure}
+    \centering
+    \begin{tikzpicture}[
+        block/.style={rectangle, draw, fill=fhtw-blue!10, minimum height=2.5em, minimum width=4em, align=center},
+        sum/.style={circle, draw, fill=fhtw-green!10, minimum size=1.5em, inner sep=0pt},
+        >=Latex, node distance=2cm
+    ]
+        \node (start) {};
+        \node[sum, right=of start]   (sum)  {$\Sigma$};
+        \node[block, right=of sum]   (ctrl)  {$K(s)$};
+        \node[block, right=of ctrl]  (plant) {$G_S(s)$};
+        \node[right=of plant] (end) {};
+        \coordinate (mid) at ($(ctrl)!0.5!(plant)$);
+        \node[block, below=1.5cm of mid] (fb) {$G_M(s)$};
+
+        \draw[->] (start) -- node[above] {$w(s)$} (sum);
+        \draw[->] (sum)   -- node[above] {$e(s)$} (ctrl);
+        \draw[->] (ctrl)  -- node[above] {$u(s)$} (plant);
+        \draw[->] (plant) -- node[above] {$y(s)$} (end);
+        \coordinate (out) at ($(plant)!0.65!(end)$);
+        \node[circle, fill, inner sep=1pt] at (out) {};
+        \draw[->] (out) |- (fb);
+        \draw[->] (fb) -| (sum) node[near end, left] {$-$};
+    \end{tikzpicture}
+    \caption{Closed-loop control system drawn with TikZ}
+\end{figure}

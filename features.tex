@@ -1,0 +1,82 @@
+\documentclass[aspectratio=169]{beamer}
+\usetheme{technikum}
+\usepackage{preamble}
+
+\input{acronyms.tex}
+\bibinput{references}
+
+\title{Beamer Theme: \texttt{technikum}}
+\subtitle{Feature Demonstration}
+\author[Sabic]{Alija Sabic}
+\email{sabic@technikum-wien.at}
+\institute{Electronic Engineering \& Entrepreneurship}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\begin{frame}{Features}
+    \begin{itemize}
+        \item Custom color scheme
+        \item Modern typography
+        \item Clean and minimalistic design
+        \item Responsive layout for different aspect ratios
+        \item Support for various content types
+    \end{itemize}
+\end{frame}
+
+\section{Theme Design}
+
+\subsection{Color Scheme}
+\input{tex/colors.tex}
+
+\subsection{Typography}
+\input{tex/typography.tex}
+
+\subsection{Clean Design}
+\input{tex/design.tex}
+
+\subsection{Responsive Layout}
+\input{tex/layout.tex}
+
+\section{Content Types}
+
+\subsection{Lists}
+\input{tex/lists.tex}
+
+\subsection{Blocks}
+\input{tex/blocks.tex}
+
+\subsection{Math}
+\input{tex/math.tex}
+
+\subsection{Code}
+\input{tex/code.tex}
+
+\subsection{Figures}
+\input{tex/figures.tex}
+
+\subsection{Tables}
+\input{tex/tables.tex}
+
+\subsection{Algorithms}
+\input{tex/algorithms.tex}
+
+\subsection{References \& Annotations}
+\input{tex/references.tex}
+
+\appendix
+
+\begin{frame}[allowframebreaks]{Acronyms}
+    \printglossary[type=\acronymtype, nonumberlist]
+\end{frame}
+
+\begin{frame}[allowframebreaks]{References}
+    \label{references}
+    \bibliography{references}
+\end{frame}
+
+\end{document}

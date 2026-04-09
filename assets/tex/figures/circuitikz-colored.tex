@@ -1,0 +1,13 @@
+\begin{figure}
+    \centering
+    \begin{circuitikz}
+        \draw (0,0)
+            to[V, v<=$U$, nvi, name=V] (0,2.5)
+            to[R, l=$R$, i>^=I, nvi, name=I] (3,2.5)
+            to[L, l=$L$] (5,2.5)
+            to[C, l=$C$] (5,0)
+            to[short] (0,0);
+            \varronly{V}\iarronly{I}
+    \end{circuitikz}
+    \caption{Voltage divider with colored \textcolor{vcolor}{voltages} and \textcolor{icolor}{currents}.}
+\end{figure}

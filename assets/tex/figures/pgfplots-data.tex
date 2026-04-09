@@ -1,0 +1,33 @@
+\begin{figure}
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            width=0.9\textwidth, height=5.5cm,
+            xlabel={Time [\unit{\hour}]},
+            ylabel={Temperature [\unit{\degreeCelsius}]},
+            grid=both,
+            axis y line*=left,
+            ymin=18, ymax=32,
+            legend style={at={(0.5,1.02)}, anchor=south, legend columns=2},
+        ]
+            \addplot[fhtw-blue, thick, mark=*, mark size=1.2pt]
+                table[col sep=comma, x=time, y=temperature]
+                {tables/measurements.csv};
+            \addlegendentry{Temperature}
+        \end{axis}
+        \begin{axis}[
+            width=0.9\textwidth, height=5.5cm,
+            axis y line*=right, axis x line=none,
+            ylabel={Humidity [\unit{\percent}]},
+            ymin=28, ymax=48,
+            legend style={at={(0.5,1.02)}, anchor=south,
+            legend columns=2, xshift=4cm},
+        ]
+            \addplot[fhtw-green, thick, mark=square*, mark size=1.2pt]
+                table[col sep=comma, x=time, y=humidity]
+                {tables/measurements.csv};
+            \addlegendentry{Humidity}
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Sensor readings from an external \acs{csv} file}
+\end{figure}

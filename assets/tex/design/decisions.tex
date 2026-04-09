@@ -1,0 +1,20 @@
+\begin{table}
+    \centering
+    \begin{tblr}{
+        colspec = {lll},
+        row{1}    = {font=\bfseries},
+        hline{1,Z} = {0.8pt},
+        hline{2}   = {0.4pt},
+        hline{3-Y} = {0.2pt, fhtw-gray!50},
+    }
+        Element            & Default & Rationale                     \\
+        Navigation symbols & Hidden  & Reduces visual noise          \\
+        Headline / sidebar & None    & Maximises content area        \\
+        Frame title        & Tinted  & Subtle hierarchy, no heavy bar \\
+        Separator rules    & 0.4\,pt & Present but unobtrusive       \\
+        Paragraph indent   & 0\,pt   & Cleaner slide layout          \\
+        Bullet markers     & Circles & Consistent across levels      \\
+        Footer             & 3-col   & Author, title, page number    \\
+    \end{tblr}
+    \caption{Key design decisions}
+\end{table}

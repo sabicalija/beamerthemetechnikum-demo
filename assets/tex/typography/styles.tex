@@ -1,0 +1,20 @@
+\begin{table}
+    \centering
+    \begin{tblr}{
+        colspec = {lll},
+        row{1}    = {font=\bfseries},
+        hline{1,Z} = {0.8pt},
+        hline{2}   = {0.4pt},
+        hline{3-Y} = {0.2pt, fhtw-gray!50},
+    }
+        Element         & Style                     & Sample \\
+        Frame title     & {\Large\bfseries Sample}  & \usebeamerfont{frametitle}\usebeamercolor[fg]{frametitle}Frame Title \\
+        Frame subtitle  & {\large Sample}           & \usebeamerfont{framesubtitle}\usebeamercolor[fg]{framesubtitle}Frame Subtitle \\
+        Block title     & {\normalsize\bfseries Sample} & \usebeamerfont{block title}Block Title \\
+        Body text       & {\normalsize Sample}      & \usebeamerfont{itemize/enumerate body}Body text at normal size \\
+        Sub-body        & {\small Sample}           & \usebeamerfont{itemize/enumerate subbody}Sub-body at small size \\
+        Caption         & {\small Sample}           & \usebeamerfont{caption}\usebeamercolor[fg]{caption name}Figure 1:~\usebeamercolor[fg]{caption}Caption text \\
+        Footer          & {\tiny Sample}            & \usebeamerfont{footline}\usebeamercolor[fg]{author in head/foot}Author~\(\cdot\)~Title~\(\cdot\)~1/10 \\
+    \end{tblr}
+    \caption{Theme element font styles}
+\end{table}

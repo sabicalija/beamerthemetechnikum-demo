@@ -1,0 +1,28 @@
+\documentclass[class=beamer]{standalone}
+
+\usetheme{technikum}
+\usepackage{preamble}
+
+\begin{document}
+\begin{tikzpicture}[
+    base/.style={draw, minimum height=2.5em, minimum width=4em, 
+                       align=center, rounded corners=2pt},
+    cloud/.style={base, ellipse, fill=fhtw-green!15},
+    edge/.style ={base, rectangle, fill=fhtw-gray!15},
+    node/.style ={base, rectangle, fill=fhtw-blue!10},
+    >=Stealth
+]
+    \node[cloud] (cloud) at (3,4) {Cloud};
+    \node[edge]  (gw)    at (0,2) {Gateway};
+    \node[edge]  (srv)   at (6,2) {Server};
+    \node[node]  (mcu1)  at (0,0) {\acs{mcu} 1};
+    \node[node]  (mcu2)  at (3,0) {\acs{mcu} 2};
+
+    \draw[<->] (gw)   -- node[left]  {\acs{mqtt}} (cloud);
+    \draw[<->] (srv)  -- node[right, xshift=0.5em] {\acs{https}} (cloud);
+    \draw[<->] (gw)   -- node[below] {\acs{rest}} (srv);
+    \draw[<->] (mcu1) -- node[left]  {\acs{spi}}  (gw);
+    \draw[<->] (mcu2) -- node[right, xshift=0.5em] {\acs{i2c}} (gw);
+    \draw[<->] (mcu1) -- node[below] {\acs{uart}} (mcu2);
+\end{tikzpicture}
+\end{document}

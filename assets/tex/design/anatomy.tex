@@ -1,0 +1,52 @@
+\begin{figure}
+    \centering
+    \begin{tikzpicture}[
+        x=0.48\textwidth,
+        y=0.27\textwidth, % 0.48 × 9/16 for 16:9 aspect ratio
+        every node/.style={font=\scriptsize},
+        >={Latex[round, scale=0.8]},
+        zone/.style={draw=fhtw-gray, rounded corners=1pt, fill=#1, minimum height=#1},
+    ]
+        % outer frame (no visible border — matches actual slide)
+        \draw[fhtw-gray!30, thin] (0,0) rectangle (1,1);
+
+        % frametitle bar
+        \fill[fhtw-blue!20] (0,0.82) rectangle (1,1);
+        \node[anchor=west, font=\small\bfseries, text=fhtw-blue] at (0.02,0.93)
+            {Frame Title};
+        \node[anchor=west, font=\footnotesize, text=fhtw-gray] at (0.02,0.86)
+            {Frame Subtitle};
+
+        % frametitle rule
+        \draw[fhtw-blue, line width=0.4pt] (0,0.82) -- (1,0.82);
+
+        % content area
+        \node[anchor=center, text=fhtw-gray, font=\normalsize] at (0.5,0.48)
+            {\textit{Content Area}};
+
+        % footline
+        \fill[fhtw-gray!20] (0,0) rectangle (1,0.08);
+        \draw[fhtw-gray, line width=0.4pt] (0,0.08) -- (1,0.08);
+        \node[anchor=west, font=\tiny, text=fhtw-gray] at (0.02,0.04)
+            {\copyright~Author};
+        \node[anchor=center, font=\tiny, text=fhtw-gray] at (0.5,0.04)
+            {Short Title};
+        \node[anchor=east, font=\tiny, text=fhtw-gray] at (0.98,0.04)
+            {1\,/\,N};
+
+        % annotations (staggered to avoid overlap)
+        \draw[<-, fhtw-green, thick] (1.0,0.93) -- ++(0.04,0)
+            node[right, text=black] {Title bar (tinted)};
+        \draw[<-, fhtw-green, thick] (1.0,0.86) -- ++(0.04,0)
+            node[right, text=black, yshift=2pt] {Subtitle};
+        \draw[<-, fhtw-green, thick] (1.0,0.82) -- ++(0.04,0)
+            node[right, text=black, yshift=-2pt] {Separator rule};
+        \draw[<-, fhtw-green, thick] (1.0,0.48) -- ++(0.04,0)
+            node[right, text=black] {Content area};
+        \draw[<-, fhtw-green, thick] (1.0,0.08) -- ++(0.04,0)
+            node[right, text=black, yshift=2pt] {Footer rule};
+        \draw[<-, fhtw-green, thick] (1.0,0.04) -- ++(0.04,0)
+            node[right, text=black, yshift=-2pt] {Footer (3-column)};
+    \end{tikzpicture}
+    \caption{Anatomy of a standard content frame}
+\end{figure}

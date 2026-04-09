@@ -1,0 +1,16 @@
+\begin{tikzpicture}
+    % Color swatches
+    \foreach \clr/\clrname/\pantone/\rgb [count=\i from 0] in {%
+        fhtw-green/{\texttt{fhtw-green}}/{PANTONE 376C}/{RGB 139, 179, 29},%
+        fhtw-gray/{\texttt{fhtw-gray}}/{PANTONE 431C}/{RGB 114, 120, 122},%
+        fhtw-blue/{\texttt{fhtw-blue}}/{PANTONE 301C}/{RGB 0, 100, 156}%
+    }{%
+        \fill[\clr] (4*\i, 0) rectangle ++(3.2, -1.8);
+        \node[below right, font=\sffamily\bfseries\small, text=white]
+            at (4*\i+0.15, -0.1) {\clrname};
+        \node[above right, font=\sffamily\tiny, text=white]
+            at (4*\i+0.15, -1.7) {\pantone};
+        \node[below right, font=\sffamily\scriptsize, text=\clr!80!black]
+            at (4*\i, -1.95) {\rgb};
+    }
+\end{tikzpicture}

@@ -1,0 +1,18 @@
+\documentclass[class=beamer]{standalone}
+
+\usetheme{technikum}
+\usepackage{preamble}
+
+\begin{document}
+\begin{circuitikz}
+    \draw (0,0)
+        to[V, v<=$U_{\symup{I}}$, nvi, name=UIN] (0,3)
+        to[R, l=$R$] (3,3)
+        to[short] (5,3)
+        to[open, v=$U_{\symup{O}}$, nvi, name=UOUT, o-o] (5,0)
+        to[short] (0,0);
+    \draw (3,3)
+        to[C, l=$C$, *-*] (3,0);
+    \varronly{UIN}\varronly{UOUT}
+\end{circuitikz}
+\end{document}

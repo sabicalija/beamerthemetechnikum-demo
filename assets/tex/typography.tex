@@ -1,0 +1,34 @@
+% --- Font Families ---
+
+\begin{frame}{Font Families}
+    The theme uses the \textbf{Noto} font family by Google, chosen for its
+    comprehensive Unicode coverage, consistent metrics across weights, and
+    excellent on-screen legibility. Noto Sans serves as the default body font,
+    with Noto Serif available for contrast and Noto Sans Mono for code listings.
+    All fonts are loaded via \texttt{fontspec} and require XeLaTeX.
+
+    \input{tex/typography/families.tex}
+\end{frame}
+
+% --- Element Styles ---
+
+\begin{frame}{Element Styles}
+    \input{tex/typography/styles.tex}
+\end{frame}
+
+% --- Multi-Script Support ---
+
+\begin{frame}{Multi-Script Support}
+    The Noto font family provides consistent typographic quality across scripts.
+    With additional font packages, the theme supports a wide range of writing systems.
+
+    \input{tex/typography/scripts.tex}
+\end{frame}
+
+\begin{frame}{Multi-Script Support (South \& Southeast Asian)}
+    \input{tex/typography/scripts-south-asian.tex}
+\end{frame}
+
+\begin{frame}{Multi-Script Support (CJK)}
+    \input{tex/typography/scripts-cjk.tex}
+\end{frame}

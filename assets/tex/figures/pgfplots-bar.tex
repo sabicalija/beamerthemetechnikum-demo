@@ -1,0 +1,24 @@
+\begin{figure}
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            width=0.85\textwidth, height=6cm,
+            ybar, bar width=12pt,
+            xlabel={Semester},
+            ylabel={Students},
+            symbolic x coords={WS22, SS23, WS23, SS24, WS24, SS25},
+            xtick=data,
+            nodes near coords, nodes near coords align={vertical},
+            ymin=0, ymax=70,
+            legend style={at={(0.98,0.98)}, anchor=north east},
+            grid=major,
+        ]
+            \addplot[fill=fhtw-blue] coordinates
+                {(WS22,42) (SS23,38) (WS23,55) (SS24,48) (WS24,61) (SS25,52)};
+            \addplot[fill=fhtw-green] coordinates
+                {(WS22,35) (SS23,31) (WS23,45) (SS24,40) (WS24,50) (SS25,47)};
+            \legend{Enrolled, Passed}
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Enrollment and pass rates by semester}
+\end{figure}

@@ -1,0 +1,228 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{preamble}[2026/03/29 Beamer Preamble]
+
+% =============================================================================
+% ACRONYMS AND GLOSSARIES
+% =============================================================================
+% Package: glossaries
+% Purpose: Manage acronyms, glossaries, and nomenclature
+% Options:
+%   - acronym:    Enable acronym functionality
+%   - shortcuts:  Enable short commands like \ac{} instead of \gls{}
+%   - nopostdot:  Remove trailing period after glossary entries
+% Usage in slides:
+%   - Define in assets/acronyms.tex
+%   - Use \ac{label} for first use (expands), subsequent uses (short form)
+%   - Use \acs{label} for short form, \acl{label} for long form
+\RequirePackage[acronym, shortcuts, nopostdot]{glossaries}
+\makeglossaries
+
+% =============================================================================
+% EXTRA FONT FAMILIES (Multi-Script Support)
+% =============================================================================
+% Package: beamerthemetechnikum-fonts (from assets/fonts/ submodule)
+% Provides \newfontfamily commands for Arabic, Armenian, Bengali, Devanagari,
+% Georgian, Hebrew, Tamil, Thai, Urdu, Japanese, Korean, Chinese (SC/TC).
+% Only Regular weight is available for these scripts.
+\RequirePackage{beamerthemetechnikum-fonts}
+
+% =============================================================================
+% BIBLIOGRAPHY AND CITATIONS
+% =============================================================================
+% Package: natbib
+% Purpose: Flexible bibliography support with numeric/author-year citations
+% Options:
+%   - square:  Use square brackets [1] instead of round (1)
+%   - numbers: Use numeric citation style
+%   - sort:    Sort multiple citations in order
+% Bibliography style: unsrtnat (natbib-compatible, numeric, citation order)
+% Usage in slides:
+%   - Define in assets/references.bib
+%   - Use \cite{key} for citations
+%   - Add \bibliography{assets/references} at end of document
+\RequirePackage[square, numbers, sort]{natbib}
+\bibliographystyle{unsrtnat}
+
+% Package: usebib
+% Purpose: Access bibliography entries without formal citation
+% Allows extracting fields from .bib entries for display without \cite{}
+% Usage: \usebibentry{key}{field} to display specific bibliography fields
+\RequirePackage{usebib}
+
+% =============================================================================
+% TABLES
+% =============================================================================
+% Package: booktabs
+% Purpose: Publication-quality horizontal rules for tabular environments
+% Provides: \toprule, \midrule, \bottomrule
+% Documentation: texdoc booktabs
+\RequirePackage{booktabs}
+
+% Package: tabularray
+% Purpose: Modern, powerful table typesetting with better syntax than tabular
+% Features:
+%   - Intuitive key-value interface for table styling
+%   - Built-in support for colors, spans, and alignment
+%   - Better control over spacing, borders, and cell formatting
+% Usage in slides:
+%   - Use \begin{tblr}{options} ... \end{tblr}
+%   - Example: \begin{tblr}{colspec={llr}, hlines, vlines}
+%   - Documentation: texdoc tabularray
+\RequirePackage{tabularray}
+
+% =============================================================================
+% UNITS AND MEASUREMENTS
+% =============================================================================
+%Package: siunitx
+% Purpose: Typeset numbers, units, and quantities with consistent formatting
+% Features:
+%   - Proper spacing between numbers and units
+%   - Automatic formatting of scientific notation
+%   - Range and uncertainty notation support
+% Usage in slides:
+%   - \qty{10}{\meter} for quantities with units
+%   - \unit{\meter\per\second} for units alone
+%   - \num{1.23e-4} for formatted numbers
+%   - Custom units: \DeclareSIUnit\inch{in}
+% Documentation: texdoc siunitx
+\RequirePackage{siunitx}
+\sisetup{per-mode=fraction}
+
+% Custom units for digital data
+\DeclareSIUnit\bit{bit}
+\DeclareSIUnit\byte{Byte}
+
+% =============================================================================
+% PLOTS AND GRAPHICS
+% =============================================================================
+% Package: pgfplots
+% Purpose: Create high-quality function plots and data visualizations
+% Features:
+%   - Consistent style with TikZ
+%   - High precision plotting
+%   - Extensive customization options
+% Usage in slides:
+%   - \begin{tikzpicture}\begin{axis} ... \end{axis}\end{tikzpicture}
+%   - Supports 2D and 3D plots
+% Documentation: texdoc pgfplots
+\RequirePackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{groupplots, polar}
+
+% =============================================================================
+% TIMING DIAGRAMS
+% =============================================================================
+% Package: tikz-timing
+% Purpose: Draw digital timing diagrams using a compact text-based syntax
+% Features:
+%   - Compact letter notation: H (high), L (low), Z (hi-Z), D{} (data), etc.
+%   - Standalone package (not a TikZ library — loaded via \usepackage)
+%   - Supports clock signals, buses, transitions, and annotations
+%   - Works with standalone compilation for external timing diagrams
+% Usage in slides:
+%   - Inline: \begin{tikztimingtable} ... \end{tikztimingtable}
+%   - Standalone: save as .tex in assets/figures/, compiled via latexmk
+% Documentation: texdoc tikz-timing
+\RequirePackage{tikz-timing}
+
+% =============================================================================
+% ALGORITHMS AND PSEUDOCODE
+% =============================================================================
+% Package: algorithm2e
+% Purpose: Typeset algorithms and pseudocode with styled keywords and structure
+% Options:
+%   - linesnumbered: Show line numbers
+%   - noend:     Suppress explicit "end" keywords for compact display
+% Features:
+%   - Keyword styling (bold, coloured) customisable via preamble
+%   - Theme-colorable: line numbers, comments
+% Usage in slides:
+%   - Wrap in \begin{algorithmdisplay}...\end{algorithmdisplay} for visual box
+%   - Use \algocaption{title} below for numbered caption
+% Documentation: texdoc algorithm2e
+\RequirePackage[linesnumbered, noend]{algorithm2e}
+
+% =============================================================================
+% CIRCUIT DIAGRAMS
+% =============================================================================
+% Package: circuitikz
+% Purpose: Draw electrical and electronic circuits using TikZ syntax
+% Features:
+%   - Wide component library (resistors, capacitors, op-amps, etc.)
+%   - Integrates seamlessly with TikZ
+%   - Supports European and American styles
+% Usage in slides:
+%   - Inline: \begin{circuitikz} ... \end{circuitikz}
+%   - Standalone: save as .tikz in assets/circuits/, compiled via latexmk
+% Documentation: texdoc circuitikz
+\RequirePackage{circuitikz}
+
+% =============================================================================
+% SVG GRAPHICS
+% =============================================================================
+% Package: svg
+% Purpose: Include SVG files directly via \includesvg, converted by Inkscape
+% Features:
+%   - inkscapelatex=true: SVG text rendered by LaTeX (matches presentation fonts)
+%   - inkscapepath: controls where generated PDFs are placed
+%   - svgpath: search directories for SVG files
+% Usage in slides:
+%   - \includesvg[width=0.7\textwidth]{signal}
+%   - SVG files stored in assets/figures/
+% Documentation: texdoc svg
+\RequirePackage{svg}
+\svgsetup{
+    inkscapelatex=false,
+    inkscapepath=build/svg-inkscape/,
+}
+
+% =============================================================================
+% IMAGE ALIGNMENT
+% =============================================================================
+% Package: adjustbox
+% Purpose: Extend graphicx/includegraphics with alignment and boxing options
+% Options:
+%   - export: Make keys available to \includegraphics directly
+% Features:
+%   - Vertical alignment of images (valign=t/m/b)
+%   - Additional boxing, trimming, and scaling options
+% Usage in slides:
+%   - \includegraphics[width=2cm, valign=m]{image} for vertical alignment in tables
+%   - Useful for aligning images with text in tabularray tables
+% Documentation: texdoc adjustbox
+\RequirePackage[export]{adjustbox}
+
+% =============================================================================
+% STANDALONE TIKZ SUPPORT
+% =============================================================================
+% Package: standalone (as package, not class)
+% Purpose: Include standalone .tex files via \includestandalone
+% Features:
+%   - mode=buildmissing: compiles standalone file if PDF doesn't exist
+%   - build={latex=latexmk}: uses latexmk (and the project .latexmkrc)
+% Usage in slides:
+%   - \includestandalone[width=0.7\textwidth]{iot-network}
+%   - Source files stored in assets/figures/ as standalone .tex
+% Documentation: texdoc standalone
+\@ifclassloaded{standalone}{
+    % When this preamble is loaded by a standalone .tex file itself,
+    % configure preview for tight cropping.
+    \RequirePackage[active,tightpage]{preview}
+    \PreviewEnvironment{tikzpicture}
+    \setlength\PreviewBorder{2pt}
+}{
+    % When loaded from the main document, provide \includestandalone.
+    % latexmk inherits the project .latexmkrc (TEXINPUTS, output dir, etc.).
+    % The custom command mirrors the source directory tree under build/:
+    %   \includestandalone{figures/iot-network}
+    %   → mkdir -p build/figures && latexmk ... -outdir=build/figures figures/iot-network
+    %   → build/figures/iot-network.pdf  (found via TEXINPUTS build//)
+    \RequirePackage[mode=build]{standalone}
+    \standaloneconfig{build={
+        latex=latexmk,
+        latexoptions={-interaction=batchmode -shell-escape},
+        command={mkdir -p build/$(dirname \file) && \latex\space\latexoptions\space-outdir=build/$(dirname \file)\space-auxdir=build/$(dirname \file)\space\file},
+    }}
+}
+
+\endinput

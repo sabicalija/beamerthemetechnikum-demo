@@ -1,0 +1,22 @@
+\begin{algorithmdisplay}
+\begin{algorithm}[H]
+    \KwIn{Graph $G = (V, E)$, source vertex $s$}
+    \KwOut{Distance $d[v]$ for all $v \in V$}
+    \ForEach{$v \in V$}{
+        $d[v] \gets \infty$\;
+    }
+    $d[s] \gets 0$\;
+    $Q \gets$ priority queue with all $v \in V$\;
+    \While{$Q \neq \emptyset$}{
+        $u \gets \operatorname{extract\text{-}min}(Q)$\;
+        \ForEach{neighbour $v$ of $u$}{
+            \If{$d[u] + w(u,v) < d[v]$}{
+                $d[v] \gets d[u] + w(u,v)$\;
+                decrease-key$(Q, v, d[v])$\;
+            }
+        }
+    }
+    \Return{$d$}\;
+\end{algorithm}
+\end{algorithmdisplay}
+\algocaption{Dijkstra's Shortest Path}

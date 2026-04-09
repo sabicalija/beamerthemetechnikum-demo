@@ -1,0 +1,19 @@
+\begin{table}
+    \centering
+    \begin{tblr}{
+            colspec = {lcccc},
+            column{1} = {font=\bfseries},
+            row{1}    = {font=\bfseries},
+            hline{2}   = {0.4pt},
+            row{even}  = {bg=fhtw-green!10},
+            hline{1} = {0.8pt},
+            hline{Z} = {0.8pt},
+        }
+        Module  & Interface             & Resolution     & Voltage          & Sleep Mode \\
+        BME280  & \acs{i2c} / \acs{spi} & \qty{16}{\bit} & \qty{3.3}{\volt} & Yes        \\
+        MPU6050 & \acs{i2c}             & \qty{16}{\bit} & \qty{3.3}{\volt} & Yes        \\
+        ADS1115 & \acs{i2c}             & \qty{16}{\bit} & \qty{5}{\volt}   & No         \\
+        MAX6675 & \acs{spi}             & \qty{12}{\bit} & \qty{5}{\volt}   & No         \\
+    \end{tblr}
+    \caption{Sensor module features}
+\end{table}

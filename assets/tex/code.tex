@@ -1,0 +1,111 @@
+\begin{frame}[fragile]{Inline Code}
+    \begin{listing}
+        \inputminted[fontsize=\footnotesize]{latex}{assets/tex/code/inline.tex}
+        \caption{Inline code with \texttt{\textbackslash mintinline}}
+    \end{listing}
+\end{frame}
+
+\begin{frame}{Inline Code}
+    \input{tex/code/inline.tex}
+\end{frame}
+
+\begin{frame}[fragile]{Direct Code}
+    \begin{listing}
+        \inputminted[fontsize=\footnotesize]{latex}{assets/tex/code/direct.tex}
+        \caption{Using a \texttt{minted} environment with \texttt{highlightlines}}
+    \end{listing}
+\end{frame}
+
+\begin{frame}[fragile]{Direct Code: Python}
+    \input{tex/code/direct.tex}
+\end{frame}
+
+\begin{frame}[fragile]{Imported Code}
+    \begin{listing}
+        \inputminted{latex}{assets/tex/code/imported.tex}
+        \caption{Importing a source file with listing and caption}
+    \end{listing}
+\end{frame}
+
+\begin{frame}[fragile]{Imported Code: Python}
+    \input{tex/code/imported.tex}
+\end{frame}
+
+\begin{frame}[fragile]{Imported Code: C}
+    \begin{listing}
+        \inputminted[fontsize=\footnotesize]{c}{assets/listings/fibonacci.c}
+        \caption{Recursive Fibonacci in C}
+    \end{listing}
+\end{frame}
+
+\begin{frame}[fragile]{Imported Code: MATLAB}
+    \begin{listing}
+        \inputminted[fontsize=\scriptsize]{matlab}{assets/listings/filter.m}
+        \caption{Butterworth low-pass filter design}
+    \end{listing}
+\end{frame}
+
+\begin{frame}[fragile]{Imported Code: \glsentrytext{vhdl}}
+    \begin{listing}
+        \inputminted[firstline=1, lastline=14, fontsize=\footnotesize]{vhdl}{assets/listings/blink.vhdl}
+        \caption{\acs{led} blink controller on \acs{fpga}}
+    \end{listing}
+\end{frame}
+
+\begin{frame}[fragile]{Imported Code: \glsentrytext{vhdl}}
+    \begin{listing}
+        \ContinuedFloat
+        \inputminted[firstline=15, lastline=28, firstnumber=15, fontsize=\footnotesize]{vhdl}{assets/listings/blink.vhdl}
+        \caption{\acs{led} blink controller on \acs{fpga} (continued)}
+    \end{listing}
+\end{frame}
+
+\begin{frame}[fragile]{Imported Code: \glsentrytext{html}}
+    \begin{listing}
+        \inputminted[firstline=1, lastline=10]{html}{assets/listings/dashboard.html}
+        \caption{\acs{iot} sensor dashboard markup}
+    \end{listing}
+\end{frame}
+
+\begin{frame}[fragile]{Imported Code: \glsentrytext{html}}
+    \begin{listing}
+        \ContinuedFloat
+        \inputminted[firstline=11, lastline=20, firstnumber=11]{html}{assets/listings/dashboard.html}
+        \caption{\acs{iot} sensor dashboard markup (continued)}
+    \end{listing}
+\end{frame}
+
+\begin{frame}[fragile]{Imported Code: \glsentrytext{css}}
+    \begin{listing}
+        \inputminted{css}{assets/listings/style.css}
+        \caption{Sensor card styling}
+    \end{listing}
+\end{frame}
+
+\begin{frame}[fragile]{Imported Code: JavaScript}
+    \begin{listing}
+        \inputminted[fontsize=\footnotesize]{javascript}{assets/listings/app.js}
+        \caption{Fetching sensor data from \acs{rest} \acs{api}}
+    \end{listing}
+\end{frame}
+
+\begin{frame}[fragile]{Imported Code: \glsentrytext{yaml}}
+    \begin{listing}
+        \inputminted{yaml}{assets/listings/config.yaml}
+        \caption{\acs{iot} node configuration}
+    \end{listing}
+\end{frame}
+
+\begin{frame}[fragile]{Imported Code: Bash}
+    \begin{listing}
+        \inputminted[fontsize=\footnotesize]{bash}{assets/listings/flash.sh}
+        \caption{\acs{esp} firmware flash and monitor script}
+    \end{listing}
+\end{frame}
+
+\begin{frame}[fragile]{Imported Code: \glsentrytext{spice}}
+    \begin{listing}
+        \inputminted[fontsize=\footnotesize]{text}{assets/listings/filter.spice}
+        \caption{\acs{rc} low-pass filter netlist}
+    \end{listing}
+\end{frame}

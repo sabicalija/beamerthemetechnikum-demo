@@ -1,0 +1,9 @@
+mqtt:
+  broker: mqtt://broker.local:1883
+  client_id: sensor-node-01
+
+sensors:
+  - name: temperature
+    type: DHT22
+    pin: GPIO4
+    interval: 5s

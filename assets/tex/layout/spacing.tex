@@ -1,0 +1,19 @@
+\begin{table}
+    \centering
+    \begin{tblr}{
+        colspec = {llc},
+        row{1}    = {font=\bfseries},
+        hline{1,Z} = {0.8pt},
+        hline{2}   = {0.4pt},
+        hline{3-Y} = {0.2pt, fhtw-gray!50},
+    }
+        Context            & Natural          & Stretch / Shrink   \\
+        Paragraph skip     & 0.5\,em          & +0.2\,/\,$-$0.3    \\
+        List item (L1)     & 0.4\,em          & +0.2\,/\,$-$0.2    \\
+        List item (L2)     & 0.5\,em          & +0.3\,/\,$-$0.3    \\
+        Block item         & 0.6\,em          & +0.3\,/\,$-$0.4    \\
+        After block        & 0.5\,em          & +0.2\,/\,$-$0.3    \\
+        Nested list indent & 0.2\,em          & fixed               \\
+    \end{tblr}
+    \caption{Vertical spacing with flexible glue}
+\end{table}

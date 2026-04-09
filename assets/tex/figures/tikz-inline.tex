@@ -1,0 +1,10 @@
+\par TikZ can be used directly inside a paragraph.
+\par For example, a resistor \tikz \draw (0,0) to[R, l=$R$] (2,0);
+or a capacitor \tikz \draw (0,0) to[C, l=$C$] (2,0); can appear
+right next to the text.
+
+\par You can also draw simple shapes like
+\tikz \fill[fhtw-green] (0,0) circle (0.3em);,
+\tikz \draw[fhtw-blue, thick] (0,0) rectangle (0.6em, 0.6em); or arrows
+\tikz \draw[-Stealth, fhtw-blue, thick] (0,0) -- (1,0); without leaving
+the paragraph.

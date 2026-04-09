@@ -1,0 +1,18 @@
+\begin{figure}
+    \centering
+    \begin{tikzpicture}
+        \begin{groupplot}[
+            group style={group size=1 by 2, vertical sep=0.4cm}, grid=both,
+            width=0.9\textwidth, height=3.6cm, xmin=0.01, xmax=100, xmode=log,
+        ]
+        \nextgroupplot[ylabel={$|H|$ [\unit{\decibel}]}, ymin=-40, ymax=5, xticklabels={}]
+            \addplot[fhtw-blue, thick, samples=200, domain=0.01:100] {-10*log10(1 + x^2)};
+            \addplot[fhtw-gray, dashed, domain=0.01:1] {0};
+            \addplot[fhtw-gray, dashed, domain=1:100] {-20*log10(x)};
+        \nextgroupplot[ylabel={$\varphi$ [\unit{\degree}]},
+                xlabel={$f/f_{\symup{c}}$}, ymin=-95, ymax=5, ytick={0,-45,-90}]
+            \addplot[fhtw-blue, thick, samples=200, domain=0.01:100] {-atan(x)};
+        \end{groupplot}
+    \end{tikzpicture}
+    \caption{Bode plot of a first-order RC low-pass filter}
+\end{figure}

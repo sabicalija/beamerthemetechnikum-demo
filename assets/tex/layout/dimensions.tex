@@ -1,0 +1,21 @@
+\begin{table}
+    \centering
+    \small
+    \begin{tblr}{
+        colspec = {lcl},
+        row{1}    = {font=\bfseries},
+        hline{1,Z} = {0.8pt},
+        hline{2}   = {0.4pt},
+        hline{3-Y} = {0.2pt, fhtw-gray!50},
+    }
+        Element         & Value                             & Unit         \\
+        Paper width     & \the\paperwidth                   & (bp)         \\
+        Paper height    & \the\paperheight                  & (bp)         \\
+        Text width      & \the\textwidth                    & (bp)         \\
+        Text margin     & 1\,em                             & relative     \\
+        Title width     & 70\,\% of \texttt{paperwidth}     & relative     \\
+        Logo width      & 30\,\% of \texttt{paperwidth}     & relative     \\
+        Footer          & full \texttt{paperwidth}           & relative     \\
+    \end{tblr}
+    \caption{Computed dimensions for the current aspect ratio}
+\end{table}

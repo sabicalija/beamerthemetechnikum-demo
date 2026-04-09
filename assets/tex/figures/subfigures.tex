@@ -1,0 +1,17 @@
+\begin{figure}
+    \centering
+    \begin{minipage}[t]{0.45\textwidth}
+        \centering
+        \begin{circuitikz}
+            \draw (0,0) to[V, v<=$U$] (0,2) to[R, l=$R$] (3,2) to[C, l=$C$] (3,0) to[short] (0,0);
+        \end{circuitikz}
+        \caption{Low-pass filter}
+    \end{minipage}
+    \begin{minipage}[t]{0.45\textwidth}
+        \centering
+        \begin{circuitikz}
+            \draw (0,0) to[V, v<=$U$] (0,2) to[C, l=$C$] (3,2) to[R, l=$R$] (3,0) to[short] (0,0);
+        \end{circuitikz}
+        \caption{High-pass filter}
+    \end{minipage}
+\end{figure}

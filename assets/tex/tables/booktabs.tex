@@ -1,0 +1,16 @@
+\begin{table}
+    \centering
+    \begin{tblr}{
+        colspec = {llrl},
+        row{1} = {font=\bfseries},
+        hline{1,Z} = {0.8pt},
+        hline{2}   = {0.4pt},
+    }
+        Protocol  & Range                  & Data Rate                          & Band                   \\
+        Wi-Fi     & \qty{50}{\meter}       & \qty{600}{\mega\bit\per\second}    & \qty{2.4}{\giga\hertz} \\
+        Bluetooth & \qty{10}{\meter}       & \qty{3}{\mega\bit\per\second}      & \qty{2.4}{\giga\hertz} \\
+        Zigbee    & \qty{100}{\meter}      & \qty{0.25}{\mega\bit\per\second}   & \qty{2.4}{\giga\hertz} \\
+        LoRa      & \qty{5000}{\meter}     & \qty{0.05}{\mega\bit\per\second}   & \qty{868}{\mega\hertz} \\
+    \end{tblr}
+    \caption{Wireless protocol comparison}
+\end{table}
