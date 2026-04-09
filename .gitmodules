@@ -1,0 +1,6 @@
+[submodule "assets/theme/technikum"]
+	path = assets/theme/technikum
+	url = https://github.com/sabicalija/beamerthemetechnikum
+[submodule "assets/fonts"]
+	path = assets/fonts
+	url = https://github.com/sabicalija/beamerthemetechnikum-fonts.git

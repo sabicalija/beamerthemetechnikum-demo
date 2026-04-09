@@ -1,0 +1,46 @@
+# Build output
+build/
+
+# latexmk
+*.fdb_latexmk
+*.fls
+
+# LaTeX auxiliary files
+*.aux
+*.log
+*.out
+*.toc
+*.nav
+*.snm
+*.vrb
+*.bbl
+*.blg
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.ist
+*.xdv
+
+# Minted cache
+_minted/
+
+# TikZ externalization
+*.auxlock
+
+# texlogsieve reports
+*.report
+*.report.full
+
+# SVG conversion cache
+svg-inkscape/
+
+# latexindent
+indent.log
+*.bak*
+
+# OS files
+.DS_Store
+Thumbs.db
