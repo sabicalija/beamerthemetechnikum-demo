@@ -1,0 +1,35 @@
+\documentclass[aspectratio=169]{beamer}
+\usetheme{technikum}
+\usepackage{preamble}
+
+\input{acronyms.tex}
+\bibinput{references}
+
+\title{Beamer Theme: \texttt{technikum}}
+\subtitle{Playground}
+\author[Sabic]{Alija Sabic}
+\email{sabic@technikum-wien.at}
+\institute{Electronic Engineering \& Entrepreneurship}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\begin{frame}
+\end{frame}
+
+\appendix
+
+\begin{frame}[allowframebreaks]{Acronyms}
+    \printglossary[type=\acronymtype, nonumberlist]
+\end{frame}
+
+\begin{frame}[allowframebreaks]{References}
+    \label{references}
+    \bibliography{references}
+\end{frame}
+
+\end{document}
